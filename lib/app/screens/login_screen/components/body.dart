@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../utilities/colors.dart';
 import '../../../utilities/text_styles.dart';
 import '../../../widgets/alternative.dart';
+import '../../register_screen/register_screen.dart';
 import 'form_login.dart';
 
 class Body extends StatelessWidget {
@@ -88,9 +89,17 @@ class Body extends StatelessWidget {
                 "Don't have an account?",
                 style: textSm(subHeaderColor, regular),
               ),
-              Text(
-                "Sign Up",
-                style: textSm(brandColor, regular),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const RegisterScreen()));
+                },
+                child: Text(
+                  "Sign Up",
+                  style: textSm(brandColor, regular),
+                ),
               )
             ],
           )

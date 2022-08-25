@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:task_wan_flutter/app/widgets/alternative.dart';
+import 'package:task_wan_flutter/app/widgets/small_button.dart';
 
 import '../../../utilities/colors.dart';
 import '../../../utilities/text_styles.dart';
@@ -12,76 +13,87 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return SingleChildScrollView(
-      padding: EdgeInsets.symmetric(horizontal: size.width * 0.05),
-      child: Column(
-        children: [
-          SizedBox(
-            height: size.height * 0.12,
-          ),
-          const Center(
-            child: Text(
-              "TASK-WAN",
-              style: TextStyle(
-                  fontFamily: "Righteous", fontSize: 34, color: brandColor),
+    return SafeArea(
+      child: SingleChildScrollView(
+        padding: EdgeInsets.symmetric(horizontal: size.width * 0.05),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SizedBox(
+              height: 10,
             ),
-          ),
-          const SizedBox(
-            height: 5,
-          ),
-          Center(
-            child: Text(
-              "Management  App",
-              style: textBase(const Color(0xFF9A9A9A), medium),
+            SmallButton(
+                icon: Icons.arrow_back_rounded,
+                ontap: () {
+                  Navigator.pop(context);
+                }),
+            const SizedBox(
+              height: 16,
             ),
-          ),
-          SizedBox(
-            height: size.height * 0.1,
-          ),
-          Center(
-            child: Text(
-              "Create your account",
-              style: textSm(subHeaderColor, medium),
+            const Center(
+              child: Text(
+                "TASK-WAN",
+                style: TextStyle(
+                    fontFamily: "Righteous", fontSize: 34, color: brandColor),
+              ),
             ),
-          ),
-          SizedBox(
-            height: size.height * 0.05,
-          ),
-          FormRegister(formkey: _formkey, size: size),
-          SizedBox(
-            height: size.height * 0.05,
-          ),
-          Row(
-            children: [
-              const Expanded(
-                child: Divider(
-                  color: brandColor,
-                  thickness: 2,
-                ),
+            const SizedBox(
+              height: 5,
+            ),
+            Center(
+              child: Text(
+                "Management  App",
+                style: textBase(const Color(0xFF9A9A9A), medium),
               ),
-              Container(
-                margin: const EdgeInsets.symmetric(horizontal: 10),
-                child: Text(
-                  "Or Register With",
-                  style: textSm(subHeaderColor, regular),
-                ),
+            ),
+            SizedBox(
+              height: size.height * 0.1,
+            ),
+            Center(
+              child: Text(
+                "Create your account",
+                style: textSm(subHeaderColor, medium),
               ),
-              const Expanded(
-                child: Divider(
-                  color: brandColor,
-                  thickness: 2,
+            ),
+            SizedBox(
+              height: size.height * 0.05,
+            ),
+            FormRegister(formkey: _formkey, size: size),
+            SizedBox(
+              height: size.height * 0.05,
+            ),
+            Row(
+              children: [
+                const Expanded(
+                  child: Divider(
+                    color: brandColor,
+                    thickness: 2,
+                  ),
                 ),
-              ),
-            ],
-          ),
-          SizedBox(
-            height: size.height * 0.05,
-          ),
-          const Alternative(),
-          SizedBox(
-            height: size.height * 0.05,
-          ),
-        ],
+                Container(
+                  margin: const EdgeInsets.symmetric(horizontal: 10),
+                  child: Text(
+                    "Or Register With",
+                    style: textSm(subHeaderColor, regular),
+                  ),
+                ),
+                const Expanded(
+                  child: Divider(
+                    color: brandColor,
+                    thickness: 2,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: size.height * 0.05,
+            ),
+            const Alternative(),
+            SizedBox(
+              height: size.height * 0.05,
+            ),
+          ],
+        ),
       ),
     );
   }

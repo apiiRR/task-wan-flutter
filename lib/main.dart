@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'app/screens/onboarding_screen/onboarding_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,20 +12,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Task-Wan',
-      theme: ThemeData(fontFamily: 'Poppins', backgroundColor: Colors.white),
-      home: MyHomePage(),
+      theme: ThemeData(fontFamily: 'Poppins'),
+      home: const OnBoardingScreen(),
     );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  MyHomePage({Key? key}) : super(key: key);
-  final _formkey = GlobalKey<FormState>();
-
-  @override
-  Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return Scaffold();
   }
 }
