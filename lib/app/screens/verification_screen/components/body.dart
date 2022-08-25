@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:task_wan_flutter/app/widgets/small_button.dart';
 
 import '../../../utilities/colors.dart';
 import '../../../utilities/text_styles.dart';
 import '../../../widgets/rounded_button.dart';
+import '../../../widgets/small_button.dart';
 import '../../verification_success_screen/verification_success_screen.dart';
 import 'input_box.dart';
 
