@@ -4,6 +4,10 @@ import '../../../../data/todo_design.dart';
 import '../../../utilities/colors.dart';
 import '../../../utilities/text_styles.dart';
 import '../../../widgets/small_button.dart';
+import 'current_time.dart';
+import 'description_project.dart';
+import 'time_left.dart';
+import 'top_title.dart';
 
 class Body extends StatefulWidget {
   const Body({Key? key}) : super(key: key);
@@ -33,20 +37,7 @@ class _BodyState extends State<Body> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Row(
-                  children: [
-                    Image.asset(
-                      "assets/png/ui_blue.png",
-                    ),
-                    const SizedBox(
-                      width: 15,
-                    ),
-                    Text(
-                      "UI Design",
-                      style: text2Xl(brandColor, bold),
-                    )
-                  ],
-                ),
+                const TopTitle(),
                 SmallButton(
                   ontap: () {
                     Navigator.pop(context);
@@ -59,144 +50,15 @@ class _BodyState extends State<Body> {
           const SizedBox(
             height: 10,
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "start",
-                    style: textSm(textColor, medium),
-                  ),
-                  Text(
-                    "21 Feb 2022",
-                    style: textXs(textColor, regular),
-                  )
-                ],
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Text(
-                    "end",
-                    style: textSm(textColor, medium),
-                  ),
-                  Text(
-                    "3 March 2022",
-                    style: textXs(textColor, regular),
-                  )
-                ],
-              )
-            ],
-          ),
+          const CurrentTime(),
           const SizedBox(
             height: 10,
           ),
-          Row(children: [
-            Flexible(
-              flex: 1,
-              fit: FlexFit.tight,
-              child: Container(
-                height: 96,
-                decoration: const BoxDecoration(
-                    color: brandColor,
-                    borderRadius: BorderRadius.all(Radius.circular(10))),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "0",
-                      style: text3Xl(Colors.white, bold),
-                    ),
-                    Text(
-                      "months",
-                      style: textSm(Colors.white, medium),
-                    )
-                  ],
-                ),
-              ),
-            ),
-            Container(
-              margin: const EdgeInsets.symmetric(horizontal: 2),
-              width: 10,
-              child: const Divider(
-                color: Color(0xFF9CCAFE),
-                thickness: 3,
-              ),
-            ),
-            Flexible(
-              flex: 1,
-              fit: FlexFit.tight,
-              child: Container(
-                height: 96,
-                decoration: const BoxDecoration(
-                    color: brandColor,
-                    borderRadius: BorderRadius.all(Radius.circular(10))),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "12",
-                      style: text3Xl(Colors.white, bold),
-                    ),
-                    Text(
-                      "days",
-                      style: textSm(Colors.white, medium),
-                    )
-                  ],
-                ),
-              ),
-            ),
-            Container(
-              margin: const EdgeInsets.symmetric(horizontal: 2),
-              width: 10,
-              child: const Divider(
-                color: Color(0xFF9CCAFE),
-                thickness: 3,
-              ),
-            ),
-            Flexible(
-              flex: 1,
-              fit: FlexFit.tight,
-              child: Container(
-                height: 96,
-                decoration: const BoxDecoration(
-                    color: brandColor,
-                    borderRadius: BorderRadius.all(Radius.circular(10))),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "18",
-                      style: text3Xl(Colors.white, bold),
-                    ),
-                    Text(
-                      "hours",
-                      style: textSm(Colors.white, medium),
-                    )
-                  ],
-                ),
-              ),
-            ),
-          ]),
+          const TimeLeft(),
           const SizedBox(
             height: 20,
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "Description",
-                style: textSm(textColor, medium),
-              ),
-              Text(
-                "user interface (UI) is anything a user may interact with to use a digital product or service. This includes everything from screens and touchscreens, keyboards, sounds, and even lights. To understand the evolution of UI, however, it’s helpful to learn a bit more about its history and how it has evolved into best practices and a profession.",
-                style: textXs(textColor, regular),
-                textAlign: TextAlign.justify,
-              )
-            ],
-          ),
+          const DescriptionProject(),
           const SizedBox(
             height: 15,
           ),

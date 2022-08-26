@@ -28,31 +28,7 @@ class _BodyState extends State<Body> {
             const SizedBox(
               height: 10,
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: size.width * 0.05),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Saturday, Feb 20 2022",
-                    style: textXs(subHeaderColor, regular),
-                  ),
-                  IconButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    const NotificationScreen()));
-                      },
-                      icon: const Icon(
-                        Icons.notifications,
-                        color: brandColor,
-                        size: 25,
-                      ))
-                ],
-              ),
-            ),
+            TopBar(size: size),
             const SizedBox(
               height: 20,
             ),
@@ -295,6 +271,44 @@ class _BodyState extends State<Body> {
             )
           ],
         ),
+      ),
+    );
+  }
+}
+
+class TopBar extends StatelessWidget {
+  const TopBar({
+    Key? key,
+    required this.size,
+  }) : super(key: key);
+
+  final Size size;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: size.width * 0.05),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            "Saturday, Feb 20 2022",
+            style: textXs(subHeaderColor, regular),
+          ),
+          IconButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            const NotificationScreen()));
+              },
+              icon: const Icon(
+                Icons.notifications,
+                color: brandColor,
+                size: 25,
+              ))
+        ],
       ),
     );
   }

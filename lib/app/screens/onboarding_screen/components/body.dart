@@ -15,7 +15,7 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> {
-  final controller = PageController();
+  PageController controller = PageController();
 
   @override
   void dispose() {
