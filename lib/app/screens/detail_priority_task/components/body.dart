@@ -108,7 +108,6 @@ class _BodyState extends State<Body> {
                   itemBuilder: (context, index) => Container(
                       margin: const EdgeInsets.only(bottom: 10),
                       padding: const EdgeInsets.symmetric(horizontal: 15),
-                      height: 50,
                       width: size.width,
                       decoration: BoxDecoration(
                           color: Colors.white,
@@ -127,13 +126,15 @@ class _BodyState extends State<Body> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
-                            todoDesign[index],
-                            style: textSm(
-                                selectedValue.contains(index)
-                                    ? brandColor
-                                    : textColor,
-                                medium),
+                          Expanded(
+                            child: Text(
+                              todoDesign[index],
+                              style: textSm(
+                                  selectedValue.contains(index)
+                                      ? brandColor
+                                      : textColor,
+                                  medium),
+                            ),
                           ),
                           IconButton(
                               alignment: Alignment.centerRight,

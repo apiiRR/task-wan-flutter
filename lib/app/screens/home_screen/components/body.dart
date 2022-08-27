@@ -228,21 +228,23 @@ class _BodyState extends State<Body> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          GestureDetector(
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          const DetailDailyTask()));
-                            },
-                            child: Text(
-                              dailyTask[index],
-                              style: textSm(
-                                  selectedValue.contains(index)
-                                      ? brandColor
-                                      : textColor,
-                                  medium),
+                          Expanded(
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const DetailDailyTask()));
+                              },
+                              child: Text(
+                                dailyTask[index],
+                                style: textSm(
+                                    selectedValue.contains(index)
+                                        ? brandColor
+                                        : textColor,
+                                    medium),
+                              ),
                             ),
                           ),
                           IconButton(
@@ -300,8 +302,7 @@ class TopBar extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) =>
-                            const NotificationScreen()));
+                        builder: (context) => const NotificationScreen()));
               },
               icon: const Icon(
                 Icons.notifications,
